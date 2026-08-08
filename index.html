@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E Sabareesh — AI & ML Engineer | Luxury Portfolio</title>
+
+  <!-- Google Fonts: Cormorant Garamond (Serif Luxury), Space Grotesk (Display), Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    /* -------------------------------------------------------------
+       CLEAN, BOLD & LUXURY DESIGN SYSTEM (BLACK & CHAMPAGNE CREAM)
+       ------------------------------------------------------------- */
+    :root {
+      --bg-black: #050505;
+      --bg-surface: #0a0a0a;
+      --bg-card: #0f0f0f;
+      --bg-card-hover: #171717;
+
+      --border-subtle: rgba(228, 212, 183, 0.12);
+      --border-gold: rgba(228, 212, 183, 0.35);
+      --border-bright: #E4D4B7;
+
+      --text-cream-bright: #FAF7F2;     /* Silk Cream */
+      --text-cream-main: #F4EFE6;       /* Main Body Cream */
+      --text-cream-muted: #BDB3A1;      /* Muted Cream */
+      --text-cream-dim: #7A7365;        /* Dimmed Taupe */
+
+      --gold-cream: #E4D4B7;            /* Champagne Gold Cream */
+      --gold-accent: #D4C19C;           /* Deep Champagne */
+      --gold-glow: rgba(228, 212, 183, 0.12);
+
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-heading: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+
+      --radius-sharp: 4px;
+      --radius-card: 14px;
+      --radius-pill: 100px;
+      --shadow-luxury: 0 20px 50px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Reset & Global Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-black);
+      color: var(--text-cream-main);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4 {
+      color: var(--text-cream-bright);
+      letter-spacing: -0.02em;
+    }
+
+    .font-serif {
+      font-family: var(--font-serif);
+    }
+
+    .font-heading {
+      font-family: var(--font-heading);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Selection Color */
+    ::selection {
+      background: var(--gold-cream);
+      color: var(--bg-black);
+    }
+
+    /* Luxury Hairline Divider */
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+      margin: 0 auto;
+    }
+
+    /* -------------------------------------------------------------
+       NAVIGATION BAR
+       ------------------------------------------------------------- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+      background: rgba(5, 5, 5, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 1000;
+    }
+
+    .nav-brand {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-cream-bright);
+    }
+
+    .brand-diamond {
+      width: 6px;
+      height: 6px;
+      background: var(--gold-cream);
+      transform: rotate(45deg);
+      box-shadow: 0 0 12px var(--gold-cream);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-cream-muted);
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-cream-bright);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0%;
+      height: 1.5px;
+      background: var(--gold-cream);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* -------------------------------------------------------------
+       BUTTONS & BADGES
+       ------------------------------------------------------------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      padding: 0.85rem 1.8rem;
+      border-radius: var(--radius-sharp);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--gold-cream);
+      color: var(--bg-black);
+      box-shadow: 0 4px 20px rgba(228, 212, 183, 0.15);
+    }
+
+    .btn-primary:hover {
+      background: var(--text-cream-bright);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(228, 212, 183, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-cream-bright);
+      border-color: var(--border-gold);
+    }
+
+    .btn-outline:hover {
+      background: rgba(228, 212, 183, 0.08);
+      border-color: var(--gold-cream);
+      transform: translateY(-2px);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.45rem 1.2rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(228, 212, 183, 0.06);
+      border: 1px solid var(--border-subtle);
+      color: var(--gold-cream);
+    }
+
+    /* -------------------------------------------------------------
+       CONTAINERS & SECTION HEADERS
+       ------------------------------------------------------------- */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 7.5rem 0;
+      position: relative;
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-cream);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 4vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      color: var(--text-cream-bright);
+    }
+
+    .section-subtitle {
+      color: var(--text-cream-muted);
+      font-size: 1.05rem;
+      margin-bottom: 3.5rem;
+      max-width: 620px;
+      font-weight: 400;
+    }
+
+    /* -------------------------------------------------------------
+       HERO SECTION
+       ------------------------------------------------------------- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 6rem;
+      position: relative;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text .hero-name {
+      font-family: var(--font-serif);
+      font-size: clamp(3.2rem, 5.5vw, 4.8rem);
+      font-weight: 700;
+      line-height: 1.08;
+      margin: 1.25rem 0 1.25rem;
+      color: var(--text-cream-bright);
+      letter-spacing: -0.01em;
+    }
+
+    .hero-name span {
+      color: var(--gold-cream);
+      font-style: italic;
+    }
+
+    .hero-tagline {
+      font-size: 1.15rem;
+      color: var(--text-cream-muted);
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+      font-weight: 400;
+      max-width: 640px;
+    }
+
+    .hero-tagline strong {
+      color: var(--text-cream-bright);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+    }
+
+    .hero-socials {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .social-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-cream-muted);
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      color: var(--bg-black);
+      background: var(--gold-cream);
+      border-color: var(--gold-cream);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px var(--gold-glow);
+    }
+
+    /* Quick Info Card (Reference Portrait Card Layout) */
+    .hero-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 1.25rem;
+      position: relative;
+      transition: all 0.35s ease;
+      box-shadow: var(--shadow-luxury);
+    }
+
+    .hero-card:hover {
+      border-color: var(--border-gold);
+    }
+
+    .profile-portrait-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1.08;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: #080808;
+    }
+
+    .profile-portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.4s ease;
+    }
+
+    .profile-portrait-wrapper:hover .profile-portrait-img {
+      transform: scale(1.03);
+    }
+
+    .portrait-overlay-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(8, 8, 8, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid var(--border-subtle);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #10B981;
+      border-radius: 2px;
+      box-shadow: 0 0 10px #10B981;
+    }
+
+    .status-text {
+      font-size: 0.725rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--text-cream-bright);
+      text-transform: uppercase;
+    }
+
+    .status-institution {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--text-cream-muted);
+      text-transform: uppercase;
+    }
+
+    .profile-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 0.85rem;
+    }
+
+    .profile-stat-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .profile-stat-box:hover {
+      border-color: var(--border-gold);
+      background: rgba(228, 212, 183, 0.04);
+    }
+
+    .stat-header {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-icon-gold {
+      color: var(--gold-cream);
+      font-size: 1.05rem;
+    }
+
+    .stat-value {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--gold-cream);
+      font-family: var(--font-heading);
+    }
+
+    .stat-label {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--text-cream-dim);
+      text-transform: uppercase;
+    }
+
+    .avatar-fallback {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      background: var(--bg-surface);
+      color: var(--gold-cream);
+      font-size: 3rem;
+    }
+
+    .info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .info-item i {
+      color: var(--gold-cream);
+      font-size: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    .info-item div span {
+      display: block;
+      font-size: 0.7rem;
+      color: var(--text-cream-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+    }
+
+    .info-item div p {
+      font-size: 0.925rem;
+      color: var(--text-cream-bright);
+      font-weight: 500;
+    }
+
+    /* -------------------------------------------------------------
+       ABOUT & EDUCATION SECTION
+       ------------------------------------------------------------- */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 2.5rem;
+      transition: all 0.35s ease;
+    }
+
+    .card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-4px);
+    }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: var(--radius-sharp);
+      background: rgba(228, 212, 183, 0.05);
+      color: var(--gold-cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .about-text {
+      color: var(--text-cream-muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .education-timeline {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 1px solid var(--border-gold);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.75rem;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.82rem;
+      top: 0.4rem;
+      width: 8px;
+      height: 8px;
+      transform: rotate(45deg);
+      background: var(--gold-cream);
+      box-shadow: 0 0 10px var(--gold-cream);
+    }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      color: var(--gold-cream);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-cream-bright);
+    }
+
+    .timeline-sub {
+      font-size: 0.95rem;
+      color: var(--text-cream-muted);
+      margin-top: 0.3rem;
+    }
+
+    /* -------------------------------------------------------------
+       SKILLS SECTION
+       ------------------------------------------------------------- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      transition: all 0.35s ease;
+    }
+
+    .skill-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-gold);
+      transform: translateY(-4px);
+    }
+
+    .skill-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-sharp);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      background: rgba(228, 212, 183, 0.05);
+      color: var(--gold-cream);
+      border: 1px solid var(--border-subtle);
+      flex-shrink: 0;
+    }
+
+    .skill-info h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .skill-info p {
+      font-size: 0.85rem;
+      color: var(--text-cream-muted);
+    }
+
+    /* -------------------------------------------------------------
+       CERTIFICATES GALLERY & LIGHTBOX
+       ------------------------------------------------------------- */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .cert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.35s ease;
+    }
+
+    .cert-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+    }
+
+    .cert-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 185px;
+      overflow: hidden;
+      background: #080808;
+    }
+
+    .cert-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .cert-card:hover .cert-img {
+      transform: scale(1.06);
+    }
+
+    .cert-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 5, 5, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .cert-card:hover .cert-overlay {
+      opacity: 1;
+    }
+
+    .cert-overlay-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--gold-cream);
+      color: var(--bg-black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .cert-body {
+      padding: 1.25rem;
+    }
+
+    .cert-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-cream-bright);
+      margin-bottom: 0.4rem;
+    }
+
+    .cert-link-text {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--gold-cream);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .cert-link-text:hover {
+      text-decoration: underline;
+    }
+
+    /* Modal Lightbox */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: var(--radius-card);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.95);
+      border: 1px solid var(--border-gold);
+      object-fit: contain;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      color: var(--gold-cream);
+      font-size: 2.2rem;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .modal-close:hover {
+      color: var(--text-cream-bright);
+    }
+
+    /* -------------------------------------------------------------
+       CONTACT SECTION
+       ------------------------------------------------------------- */
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+      text-align: left;
+    }
+
+    .contact-item {
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+      border-color: var(--border-gold);
+      background: rgba(228, 212, 183, 0.04);
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(228, 212, 183, 0.06);
+      color: var(--gold-cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .contact-details span {
+      font-size: 0.7rem;
+      color: var(--text-cream-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      display: block;
+      font-weight: 700;
+    }
+
+    .contact-details a {
+      font-size: 0.925rem;
+      font-weight: 600;
+      color: var(--text-cream-bright);
+      word-break: break-all;
+      transition: color 0.25s ease;
+    }
+
+    .contact-details a:hover {
+      color: var(--gold-cream);
+    }
+
+    /* -------------------------------------------------------------
+       FOOTER
+       ------------------------------------------------------------- */
+    footer {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+      color: var(--text-cream-dim);
+      font-size: 0.825rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .navbar { padding: 0 1.5rem; }
+      .hero-content { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar">
+    <a href="#" class="nav-brand">
+      <span class="brand-diamond"></span> E. SABAREESH
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="mailto:elanghovansabareesh0921@gmail.com" class="btn btn-outline" style="padding: 0.6rem 1.4rem;">
+      <i class="fa-regular fa-envelope"></i> Email Me
+    </a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        
+        <div class="hero-text">
+          <div class="badge">
+            <i class="fa-solid fa-graduation-cap"></i> SRMIST Ramapuram • 2nd Year B.Tech
+          </div>
+          <h1 class="hero-name">
+            Hi, I'm <span>E. Sabareesh</span>
+          </h1>
+          <p class="hero-tagline">
+            Computer Science & Engineering student specializing in <strong>Artificial Intelligence & Machine Learning</strong>. Dedicated to building robust software systems, high-performance algorithms in Python & C/C++, luxury web architecture, and automated workflows with <strong>n8n</strong>.
+          </p>
+          
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              <i class="fa-solid fa-paper-plane"></i> Get In Touch
+            </a>
+            <a href="#certificates" class="btn btn-outline">
+              <i class="fa-solid fa-certificate"></i> Credentials
+            </a>
+          </div>
+
+          <div class="hero-socials">
+            <a href="https://github.com/elanghovansabareesh0921-cell" target="_blank" class="social-icon" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/sabareesh-elanghovan-b3187837a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-icon" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/sabby.__.09/" target="_blank" class="social-icon" title="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="mailto:elanghovansabareesh0921@gmail.com" class="social-icon" title="Email">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- QUICK INFO CARD (REFERENCE PORTRAIT CARD) -->
+        <div class="hero-card">
+          <!-- Portrait Container -->
+          <div class="profile-portrait-wrapper">
+            <img id="userPhoto" src="profile.png" alt="E Sabareesh" class="profile-portrait-img" onerror="handlePhotoFallback(this)">
+            <div id="avatarIconFallback" class="avatar-fallback" style="display:none;">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <!-- Overlay Bar at bottom of photo -->
+            <div class="portrait-overlay-bar">
+              <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span class="status-text">SEEKING INTERNSHIPS</span>
+              </div>
+              <span class="status-institution">SRM IST</span>
+            </div>
+          </div>
+
+          <!-- Bottom Stat Grid (2 columns) -->
+          <div class="profile-stats-grid">
+            <div class="profile-stat-box">
+              <div class="stat-header">
+                <i class="fa-solid fa-ribbon stat-icon-gold"></i>
+                <span class="stat-value">9.02 CGPA</span>
+              </div>
+              <span class="stat-label">ACADEMIC EXCELLENCE</span>
+            </div>
+
+            <div class="profile-stat-box">
+              <div class="stat-header">
+                <i class="fa-solid fa-certificate stat-icon-gold"></i>
+                <span class="stat-value">4 CERTS</span>
+              </div>
+              <span class="stat-label">IBM SKILLSBUILD</span>
+            </div>
+          </div>
+
+          <!-- Info Details List -->
+          <ul class="info-list" style="margin-top: 1.25rem;">
+            <li class="info-item">
+              <i class="fa-solid fa-user-graduate"></i>
+              <div>
+                <span>Degree & Major</span>
+                <p>B.Tech CSE (AI & ML)</p>
+              </div>
+            </li>
+            <li class="info-item">
+              <i class="fa-solid fa-building-columns"></i>
+              <div>
+                <span>Institution</span>
+                <p>SRMIST Ramapuram</p>
+              </div>
+            </li>
+            <li class="info-item">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <span>Phone</span>
+                <p>+91 9361775890</p>
+              </div>
+            </li>
+            <li class="info-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <span>Email</span>
+                <p>elanghovansabareesh0921@gmail.com</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ABOUT & EDUCATION SECTION -->
+  <section id="about">
+    <div class="container">
+      <div class="grid-2">
+        
+        <!-- About Card -->
+        <div class="card">
+          <div class="card-icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <span class="section-tag">01. BACKGROUND</span>
+          <h3>About Me</h3>
+          <p class="about-text">
+            I am a dedicated 2nd-year B.Tech Computer Science student specializing in Artificial Intelligence and Machine Learning at SRM Institute of Science and Technology (SRMIST), Ramapuram.
+          </p>
+          <p class="about-text">
+            Driven by curiosity and an engineering mindset, I focus on software development, algorithm design in C/C++, efficient Python scripting, clean frontend web architecture, and automated n8n workflows.
+          </p>
+        </div>
+
+        <!-- Education Card -->
+        <div class="card" id="education">
+          <div class="card-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <span class="section-tag">02. ACADEMICS</span>
+          <h3>Education</h3>
+          <div class="education-timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">Upto Class 10</div>
+              <div class="timeline-title">Secondary Schooling (Upto 10th Grade)</div>
+              <div class="timeline-sub">Secondary School Education</div>
+              <div class="timeline-sub" style="color: var(--text-cream-dim); font-size: 0.85rem; margin-top: 0.2rem;">
+                Narayana e-Techno School
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">Class 11 — Class 12</div>
+              <div class="timeline-title">Higher Secondary Education (11th & 12th)</div>
+              <div class="timeline-sub">Senior Secondary Science Stream</div>
+              <div class="timeline-sub" style="color: var(--text-cream-dim); font-size: 0.85rem; margin-top: 0.2rem;">
+                Narayana Jr. College
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">2025 — Present (2nd Year)</div>
+              <div class="timeline-title">B.Tech Computer Science & Engineering</div>
+              <div class="timeline-sub">Specialization in AI & Machine Learning • 9.02 CGPA</div>
+              <div class="timeline-sub" style="color: var(--text-cream-dim); font-size: 0.85rem; margin-top: 0.2rem;">
+                SRM Institute of Science and Technology, Ramapuram
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills">
+    <div class="container">
+      <span class="section-tag">03. EXPERTISE</span>
+      <h2 class="section-title">Technical Capabilities</h2>
+      <p class="section-subtitle">Core programming languages, technologies, and automation systems I specialize in.</p>
+
+      <div class="skills-grid">
+        
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fa-brands fa-python"></i>
+          </div>
+          <div class="skill-info">
+            <h4>Python</h4>
+            <p>Data Structures, AI/ML basics & scripting</p>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <div class="skill-info">
+            <h4>C & C++</h4>
+            <p>Object Oriented Programming & Algorithms</p>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fa-brands fa-html5"></i>
+          </div>
+          <div class="skill-info">
+            <h4>HTML & CSS</h4>
+            <p>Responsive web design & UI layout</p>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fa-solid fa-diagram-project"></i>
+          </div>
+          <div class="skill-info">
+            <h4>n8n Automation</h4>
+            <p>Workflow automation & API integration</p>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <div class="skill-info">
+            <h4>AI & ML</h4>
+            <p>Specialization coursework & concepts</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CERTIFICATES GALLERY -->
+  <section id="certificates">
+    <div class="container">
+      <span class="section-tag">04. HONORS</span>
+      <h2 class="section-title">Certifications & Credentials</h2>
+      <p class="section-subtitle">Select any certificate preview to inspect in high resolution.</p>
+
+      <div class="cert-grid">
+
+        <!-- Certificate 1: Build With AI -->
+        <div class="cert-card" onclick="openModal('https://cdn.phototourl.com/free/2026-08-04-3d2f1a21-d2a2-4f02-a3f7-d357b0b28ba1.jpg')">
+          <div class="cert-img-wrapper">
+            <img src="https://cdn.phototourl.com/free/2026-08-04-3d2f1a21-d2a2-4f02-a3f7-d357b0b28ba1.jpg" alt="Build With AI - Buildathon Hackathon Certificate" class="cert-img" loading="lazy">
+            <div class="cert-overlay">
+              <div class="cert-overlay-btn">
+                <i class="fa-solid fa-expand"></i>
+              </div>
+            </div>
+          </div>
+          <div class="cert-body">
+            <div class="cert-title">Build With AI — Buildathon Hackathon</div>
+            <div style="font-size: 0.8rem; color: var(--text-cream-muted); margin-bottom: 0.4rem;">AI Hackathon Credential</div>
+            <a href="https://cdn.phototourl.com/free/2026-08-04-3d2f1a21-d2a2-4f02-a3f7-d357b0b28ba1.jpg" target="_blank" class="cert-link-text" onclick="event.stopPropagation()">
+              <i class="fa-solid fa-up-right-from-square"></i> View Original
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificate 2: Machine Learning Workshop IIST -->
+        <div class="cert-card" onclick="openModal('https://cdn.phototourl.com/free/2026-08-04-ed6358d4-7a14-4603-8c2f-d5d7a16a1ebf.jpg')">
+          <div class="cert-img-wrapper">
+            <img src="https://cdn.phototourl.com/free/2026-08-04-ed6358d4-7a14-4603-8c2f-d5d7a16a1ebf.jpg" alt="Machine Learning Workshop Certificate - IIST" class="cert-img" loading="lazy">
+            <div class="cert-overlay">
+              <div class="cert-overlay-btn">
+                <i class="fa-solid fa-expand"></i>
+              </div>
+            </div>
+          </div>
+          <div class="cert-body">
+            <div class="cert-title">Machine Learning Workshop</div>
+            <div style="font-size: 0.8rem; color: var(--text-cream-muted); margin-bottom: 0.4rem;">Conducted by IIST</div>
+            <a href="https://cdn.phototourl.com/free/2026-08-04-ed6358d4-7a14-4603-8c2f-d5d7a16a1ebf.jpg" target="_blank" class="cert-link-text" onclick="event.stopPropagation()">
+              <i class="fa-solid fa-up-right-from-square"></i> View Original
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificate 3: Top Lyria Artist Google Gemini -->
+        <div class="cert-card" onclick="openModal('https://cdn.phototourl.com/free/2026-08-04-f5e1451c-5774-4d03-ba67-4c7de2c46f17.jpg')">
+          <div class="cert-img-wrapper">
+            <img src="https://cdn.phototourl.com/free/2026-08-04-f5e1451c-5774-4d03-ba67-4c7de2c46f17.jpg" alt="Top Lyria Artist Certificate - Google Gemini" class="cert-img" loading="lazy">
+            <div class="cert-overlay">
+              <div class="cert-overlay-btn">
+                <i class="fa-solid fa-expand"></i>
+              </div>
+            </div>
+          </div>
+          <div class="cert-body">
+            <div class="cert-title">Top Lyria Artist</div>
+            <div style="font-size: 0.8rem; color: var(--text-cream-muted); margin-bottom: 0.4rem;">Conducted by Google Gemini</div>
+            <a href="https://cdn.phototourl.com/free/2026-08-04-f5e1451c-5774-4d03-ba67-4c7de2c46f17.jpg" target="_blank" class="cert-link-text" onclick="event.stopPropagation()">
+              <i class="fa-solid fa-up-right-from-square"></i> View Original
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificate 4: IBM SkillsBuild AI -->
+        <div class="cert-card" onclick="openModal('cert_ibm_ai.jpg')">
+          <div class="cert-img-wrapper">
+            <img src="cert_ibm_ai.jpg" alt="Getting Started with Artificial Intelligence - IBM SkillsBuild" class="cert-img" loading="lazy">
+            <div class="cert-overlay">
+              <div class="cert-overlay-btn">
+                <i class="fa-solid fa-expand"></i>
+              </div>
+            </div>
+          </div>
+          <div class="cert-body">
+            <div class="cert-title">Getting Started with AI</div>
+            <div style="font-size: 0.8rem; color: var(--text-cream-muted); margin-bottom: 0.4rem;">IBM SkillsBuild • Feb 2026</div>
+            <a href="https://www.credly.com/badges/804ecfdd-e1aa-4688-bfd3-9ab6c60382b5" target="_blank" class="cert-link-text" onclick="event.stopPropagation()">
+              <i class="fa-solid fa-up-right-from-square"></i> Verify Credly
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL FOR CERTIFICATES -->
+  <div class="modal" id="certModal" onclick="closeModal()">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <img src="" alt="Expanded Certificate" class="modal-content" id="modalImg" onclick="event.stopPropagation()">
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-card">
+        <span class="section-tag" style="display: block; text-align: center;">05. CONNECT</span>
+        <h2 class="section-title" style="text-align: center;">Get In Touch</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">Available for engineering collaborations, AI/ML projects, and technical opportunities.</p>
+
+        <div class="contact-grid">
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fa-regular fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <span>Email</span>
+              <a href="mailto:elanghovansabareesh0921@gmail.com">elanghovansabareesh0921@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <span>Phone</span>
+              <a href="tel:+919361775890">+91 9361775890</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+            <div class="contact-details">
+              <span>LinkedIn</span>
+              <a href="https://www.linkedin.com/in/sabareesh-elanghovan-b3187837a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">sabareesh-elanghovan</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fa-brands fa-github"></i>
+            </div>
+            <div class="contact-details">
+              <span>GitHub</span>
+              <a href="https://github.com/elanghovansabareesh0921-cell" target="_blank">elanghovansabareesh0921-cell</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div class="contact-details">
+              <span>Instagram</span>
+              <a href="https://www.instagram.com/sabby.__.09/" target="_blank">@sabby.__.09</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> E SABAREESH • ALL RIGHTS RESERVED</p>
+    </div>
+  </footer>
+
+  <!-- JS SCRIPT -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const photoFallbacks = ['profile.png', 'profile.jpg', 'photo.jpg', 'image.jpg'];
+    let fallbackIndex = 0;
+
+    function handlePhotoFallback(img) {
+      if (fallbackIndex < photoFallbacks.length) {
+        img.src = photoFallbacks[fallbackIndex++];
+      } else {
+        img.style.display = 'none';
+        document.getElementById('avatarIconFallback').style.display = 'flex';
+      }
+    }
+
+    function openModal(imgSrc) {
+      const modal = document.getElementById('certModal');
+      const modalImg = document.getElementById('modalImg');
+      modalImg.src = imgSrc;
+      modal.classList.add('active');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('certModal');
+      modal.classList.remove('active');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+</body>
+</html>
